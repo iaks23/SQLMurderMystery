@@ -127,6 +127,7 @@ and membership_id like '48Z%'
 ```
 
 |membership_id|	check_in_date|	check_in_time|	check_out_time|
+|---|---|---|---|
 |48Z7A|	20180109|	1600|	1730|
 |48Z55|	20180109|	1530|	1700|
 
