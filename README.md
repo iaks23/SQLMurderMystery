@@ -134,13 +134,13 @@ and membership_id like '48Z%'
 SELECT * FROM get_fit_now_member WHERE id='48Z7A'
 ```
 
-# 28819	Joe Germuska
+#### 28819	Joe Germuska
 
 ```SQL
 SELECT * FROM get_fit_now_member WHERE id='48Z55'
 ```
 
-# 67318	Jeremy Bowers
+#### 67318	Jeremy Bowers
 
 We have two suspects and the only way to narrow down is to verify the license plates as well. 
 
