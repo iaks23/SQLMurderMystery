@@ -47,6 +47,101 @@ and city='SQL City';
 |---|---|---|---|
 |20180115|	murder|	Security footage shows that there were 2 witnesses. The first witness lives at the last house on "Northwestern Dr". The second witness, named Annabel, lives somewhere on "Franklin Ave".| SQL City|
 
+The address clues leads us to the `person` table which has the column address. 
+
+```SQL
+SELECT * from person 
+WHERE address_street_name='Franklin Ave' and name like 'Annabel%';
+```
+
+|id|	name|	license_id|	address_number|	address_street_name|	ssn|
+|---|---|---|---|---|---|
+|16371|	Annabel Miller|	490173|	103| Franklin Ave|	318771143|
+
+
+
+```SQL
+SELECT * from person 
+WHERE address_street_name='Northwestern Dr' order by address_number DESC;
+```
+
+|id|	name|	license_id|	address_number|	address_street_name|	ssn|
+|---|---|---|---|---|---|
+|14887|	Morty Schapiro|	118009|	4919|	Northwestern Dr|	111564949|
+
+### Two leads!
+
+Let's explore their interviews to find out if they know something! 
+
+# 👩🏼‍🦳 Witness Interview #1 <a name='wit1'></a>
+
+```SQL
+SELECT * FROM interview WHERE person_id=16371
+```
+
+> Annabel Franklin Says:
+
+`I saw the murder happen, 
+and I recognized the killer from my gym when I was working out last week on January the 9th.`
+
+
+# 🧑🏾‍🦱 Witness Interview #2 <a name='wit2'></a>
+
+```SQL
+
+SELECT * FROM interview WHERE person_id=14887
+```
+
+> Morty Schapiro Says:
+
+`I heard a gunshot and then saw a man run out. He had a "Get Fit Now Gym" bag. 
+The membership number on the bag started with "48Z". Only gold members have those bags. 
+The man got into a car with a plate that included "H42W"`
+
+# 🛵 Following Our Leads <a name='leads'></a>
+
+We're getting warmer and the name of the killer probably lies in the two tables related to the Get Fit Now gyms. 
+
+First let's explore the timings that Anabel was working out on the 9th of January when she spotted the murderer. 
+
+```SQL
+SELECT * FROM get_fit_now_member WHERE person_id=16371
+```
+
+|id|	person_id|	name|	membership_start_date|	membership_status|
+|---|---|---|---|---|
+|90081|	16371|	Annabel Miller|	20160208|	gold|
+
+```SQL
+SELECT * FROM get_fit_now_check_in WHERE membership_id = '90081'
+```
+
+> Annabel's checkin & checkout times are: 1600 to 1700
+
+Using this knowledge along with the second witness statement, 
+
+```SQL
+SELECT * FROM get_fit_now_check_in WHERE check_in_date = 20180109 
+and membership_id like '48Z%'
+```
+
+|membership_id|	check_in_date|	check_in_time|	check_out_time|
+|48Z7A|	20180109|	1600|	1730|
+|48Z55|	20180109|	1530|	1700|
+
+```SQL
+SELECT * FROM get_fit_now_member WHERE id='48Z7A'
+```
+
+# 28819	Joe Germuska
+
+```SQL
+SELECT * FROM get_fit_now_member WHERE id='48Z55'
+```
+
+# 67318	Jeremy Bowers
+
+We have two suspects and the only way to narrow down is to verify the license plates as well. 
 
 
 
