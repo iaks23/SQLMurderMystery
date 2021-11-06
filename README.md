@@ -1,4 +1,5 @@
-[![forthebadge](https://forthebadge.com/images/badges/made-with-markdown.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/as-seen-on-tv.svg)](https://forthebadge.com) 
+[![forthebadge](https://forthebadge.com/images/badges/made-with-markdown.svg)](https://forthebadge.com) [![forthebadge](https://forthebadge.com/images/badges/as-seen-on-tv.svg)](https://forthebadge.com) [![forthebadge](https://github.com/iaks23/SQLMurderMystery/blob/main/img/shut-up-i'm-in-my-mind-palace.svg)](https://forthebadge.com) 
+
 
 # 🚨 SQL Murder Mystery
 
@@ -13,8 +14,6 @@
 * [📝 Crime Scene Report](#report)
 
 
-
-
 # 🔎 Elementary, Dear Watson <a name='preface'></a>
 
 ### There's been a murder in SQL CITY! 
@@ -24,3 +23,10 @@ A crime has occurred, a murderer is on the loose, and a detective needs our SQL 
 > 💡 The crime was a `murder` that occurred sometime on `Jan.15, 2018` and that it took place in `SQL City`.
 
 Let's put on our thinking caps, and get aborad the mystery train!
+
+<p align="center">
+  <img width="350" height="350" src="https://github.com/iaks23/SQLMurderMystery/blob/main/img/game.GIF">
+</p>
+
+
+
