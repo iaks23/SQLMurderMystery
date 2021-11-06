@@ -15,6 +15,7 @@
   * [👩🏼‍🦳 Witness Interview 1](#wit1)
   * [🧑🏾‍🦱 Witness Interview 2](#wit2)
 * [🛵 Following Up on Leads](#leads)
+* [📌 Finding The Killer](#killer)
 
 
 # 🔎 Elementary, Dear Watson <a name='preface'></a>
@@ -143,5 +144,6 @@ SELECT * FROM get_fit_now_member WHERE id='48Z55'
 
 We have two suspects and the only way to narrow down is to verify the license plates as well. 
 
+# 📌 Finding The Killer <a name='killer'></a>
 
 
